@@ -1,9 +1,11 @@
 package bots
 
 import bots.Lista
+import java.util.concurrent.atomic.AtomicInteger
+
 class ListaDao {
     private val listaDao = hashMapOf(
-        0 to Lista(id =0, item = "arroz", quantidadeItem = 4),
+        0 to Lista(id =0,  item = "arroz", quantidadeItem = 4),
         1 to Lista(id =1, item = "leite", quantidadeItem = 10),
         2 to Lista(id =2, item = "cuscuz", quantidadeItem = 8),
         3 to Lista(id =3, item = "sabão", quantidadeItem = 32)
@@ -32,7 +34,7 @@ class ListaDao {
         return listaDao[id]
     }
 
-    fun findByPlanet(item: String): Lista? {
+    fun findByItem(item: String): Lista? {
         return listaDao.values.find { it.item == item }
     }
 
